@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace FluxSE\SyliusStripePlugin\DependencyInjection;
 
+use FluxSE\SyliusStripePlugin\Repository\StripePaymentRequestRepository;
 use Sylius\Bundle\CoreBundle\DependencyInjection\PrependDoctrineMigrationsTrait;
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Extension\AbstractResourceExtension;
 use Symfony\Component\Config\FileLocator;
@@ -48,6 +49,16 @@ final class FluxSESyliusStripeExtension extends AbstractResourceExtension implem
     public function prepend(ContainerBuilder $container): void
     {
         $this->prependDoctrineMigrations($container);
+
+        $container->prependExtensionConfig('sylius_payment', [
+            'resources' => [
+                'payment_request' => [
+                    'classes' => [
+                        'repository' => StripePaymentRequestRepository::class,
+                    ],
+                ],
+            ],
+        ]);
     }
 
     protected function getMigrationsNamespace(): string

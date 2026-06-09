@@ -5,24 +5,22 @@ declare(strict_types=1);
 namespace FluxSE\SyliusStripePlugin\Provider;
 
 use ArrayAccess;
+use FluxSE\SyliusStripePlugin\Repository\StripePaymentRequestRepositoryInterface;
 use FluxSE\SyliusStripePlugin\Stripe\Resolver\EventResolverInterface;
 use Stripe\StripeObject;
 use Sylius\Bundle\PaymentBundle\Provider\NotifyPaymentProviderInterface;
 use Sylius\Component\Payment\Model\PaymentInterface;
 use Sylius\Component\Payment\Model\PaymentMethodInterface;
-use Sylius\Component\Payment\Model\PaymentRequestInterface;
-use Sylius\Component\Payment\Repository\PaymentRequestRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 final readonly class StripeNotifyPaymentProvider implements NotifyPaymentProviderInterface
 {
     /**
      * @param string[] $supportedFactories
-     * @param PaymentRequestRepositoryInterface<PaymentRequestInterface> $paymentRequestRepository
      */
     public function __construct(
         private array $supportedFactories,
-        private PaymentRequestRepositoryInterface $paymentRequestRepository,
+        private StripePaymentRequestRepositoryInterface $paymentRequestRepository,
         private EventResolverInterface $eventResolver,
     ) {
     }
@@ -50,21 +48,32 @@ final readonly class StripeNotifyPaymentProvider implements NotifyPaymentProvide
         }
 
         $hash = $metadata->offsetGet(MetadataProviderInterface::DEFAULT_TOKEN_HASH_KEY_NAME);
-        if (!is_string($hash)) {
+        if (is_string($hash)) {
+            $paymentRequest = $this->paymentRequestRepository->findOneBy(['hash' => $hash]);
+            if (null === $paymentRequest) {
+                throw new \LogicException(sprintf(
+                    'Unable to retrieve the payment request (hash:%s) related to this Stripe event (ID:"%s").',
+                    $hash,
+                    $event->id,
+                ));
+            }
+
+            return $paymentRequest->getPayment();
+        }
+
+        $stripeObjectId = $object->offsetGet('id');
+        if (!is_string($stripeObjectId)) {
             throw new \LogicException(sprintf(
                 'The Stripe event object metadata (key: "%s") must be a string.',
                 MetadataProviderInterface::DEFAULT_TOKEN_HASH_KEY_NAME,
             ));
         }
 
-        $paymentRequest = $this->paymentRequestRepository->findOneBy([
-            'hash' => $hash,
-        ]);
+        $paymentRequest = $this->paymentRequestRepository->findOneByStripeObjectId($stripeObjectId);
         if (null === $paymentRequest) {
             throw new \LogicException(sprintf(
-                'Unable to retrieve the payment request (hash:%s) related to this Stripe event (ID:"%s").',
-                $hash,
-                $event->id,
+                'Unable to retrieve the payment request for Stripe event object (ID:"%s").',
+                $stripeObjectId,
             ));
         }
 
