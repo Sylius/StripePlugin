@@ -51,6 +51,10 @@ final class SessionTransitionProvider implements SessionTransitionProviderInterf
 
     public function isCancel(Session $session): bool
     {
+        if (Session::STATUS_COMPLETE === $session->status) {
+            return $this->sessionModeTransitionProvider->isCancel($session);
+        }
+
         if (!$this->isProcess($session)) {
             return false;
         }

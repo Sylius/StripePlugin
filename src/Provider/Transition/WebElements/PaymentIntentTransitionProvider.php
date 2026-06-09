@@ -17,11 +17,11 @@ final class PaymentIntentTransitionProvider implements PaymentIntentTransitionPr
 
     public function isComplete(PaymentIntent $paymentIntent): bool
     {
-        if ($this->isChargeRefunded($paymentIntent)) {
+        if (PaymentIntent::STATUS_SUCCEEDED !== $paymentIntent->status) {
             return false;
         }
 
-        return PaymentIntent::STATUS_SUCCEEDED === $paymentIntent->status;
+        return !$this->isChargeRefunded($paymentIntent);
     }
 
     public function isFail(PaymentIntent $paymentIntent): bool
