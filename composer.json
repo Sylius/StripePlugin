@@ -10,9 +10,15 @@
             "email": "Prometee@users.noreply.github.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/rust-le/TestApplication.git"
+        }
+    ],
     "require": {
         "stripe/stripe-php": "^20.0",
-        "sylius/core-bundle": "^2.0",
+        "sylius/core-bundle": "^2.3",
         "sylius/telemetry": "^1.0"
     },
     "require-dev": {
@@ -41,16 +47,17 @@
         "spaze/phpstan-stripe": "^3.2",
         "sylius-labs/coding-standard": "^4.1",
         "sylius-labs/suite-tags-extension": "^0.2.0",
-        "sylius/sylius": "^2.0",
-        "sylius/test-application": "^2.0.0@alpha",
-        "symfony/browser-kit": "^6.4 || ^7.4",
-        "symfony/debug-bundle": "^6.4 || ^7.4",
-        "symfony/dotenv": "^6.4 || ^7.4",
-        "symfony/intl": "^6.4 || ^7.4",
-        "symfony/runtime": "^7.1",
-        "symfony/web-profiler-bundle": "^6.4 || ^7.4",
+        "sylius/sylius": "^2.3",
+        "sylius/test-application": "dev-sylius-2.3-symfony-8",
+        "symfony/browser-kit": "^7.4 || ^8.4",
+        "symfony/debug-bundle": "^7.4 || ^8.4",
+        "symfony/dotenv": "^7.4 || ^8.4",
+        "symfony/intl": "^7.4 || ^8.4",
+        "symfony/runtime": "^7.4 || ^8.0",
+        "symfony/web-profiler-bundle": "^7.4 || ^8.4",
         "theofidry/alice-data-fixtures": "^1.7"
     },
+    "minimum-stability": "dev",
     "suggest": {
         "sylius/shop-bundle": "Use the Sylius default front shop",
         "sylius/admin-bundle": "Use the Sylius default admin",

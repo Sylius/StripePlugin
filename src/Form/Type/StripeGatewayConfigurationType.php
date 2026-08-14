@@ -27,23 +27,23 @@ final class StripeGatewayConfigurationType extends AbstractType
                     'placeholder' => 'pk_',
                 ],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe.publishable_key.not_blank',
-                        'groups' => [
+                    new NotBlank(
+                        message: 'flux_se_sylius_stripe_plugin.stripe.publishable_key.not_blank',
+                        groups: [
                             'sylius',
                             'stripe_checkout',
                             'stripe_web_elements',
                         ],
-                    ]),
-                    new Regex([
-                        'pattern' => self::PUBLISHABLE_KEY_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe.publishable_key.invalid_format',
-                        'groups' => [
+                    ),
+                    new Regex(
+                        pattern: self::PUBLISHABLE_KEY_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe.publishable_key.invalid_format',
+                        groups: [
                             'sylius',
                             'stripe_checkout',
                             'stripe_web_elements',
                         ],
-                    ]),
+                    ),
                 ],
             ])
             ->add('secret_key', TextType::class, [
@@ -52,23 +52,23 @@ final class StripeGatewayConfigurationType extends AbstractType
                     'placeholder' => 'rk_',
                 ],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe.secret_key.not_blank',
-                        'groups' => [
+                    new NotBlank(
+                        message: 'flux_se_sylius_stripe_plugin.stripe.secret_key.not_blank',
+                        groups: [
                             'sylius',
                             'stripe_checkout',
                             'stripe_web_elements',
                         ],
-                    ]),
-                    new Regex([
-                        'pattern' => self::SECRET_KEY_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe.secret_key.invalid_format',
-                        'groups' => [
+                    ),
+                    new Regex(
+                        pattern: self::SECRET_KEY_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe.secret_key.invalid_format',
+                        groups: [
                             'sylius',
                             'stripe_checkout',
                             'stripe_web_elements',
                         ],
-                    ]),
+                    ),
                 ],
             ])
             ->add('use_authorize', CheckboxType::class, [
@@ -93,14 +93,14 @@ final class StripeGatewayConfigurationType extends AbstractType
                 ],
                 'error_bubbling' => false,
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe.webhook_secret_keys.not_blank',
-                        'groups' => [
+                    new NotBlank(
+                        message: 'flux_se_sylius_stripe_plugin.stripe.webhook_secret_keys.not_blank',
+                        groups: [
                             'sylius',
                             'stripe_checkout',
                             'stripe_web_elements',
                         ],
-                    ]),
+                    ),
                 ],
                 'entry_options' => [
                     'label' => false,

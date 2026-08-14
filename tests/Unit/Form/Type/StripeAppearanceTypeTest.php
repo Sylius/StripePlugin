@@ -23,7 +23,7 @@ final class StripeAppearanceTypeTest extends TestCase
     #[DataProvider('acceptedColorProvider')]
     public function test_color_field_accepts_valid_hex(string $color): void
     {
-        $violations = $this->validator->validate($color, new Regex(['pattern' => StripeAppearanceType::COLOR_PATTERN]));
+        $violations = $this->validator->validate($color, new Regex(pattern: StripeAppearanceType::COLOR_PATTERN));
 
         self::assertCount(0, $violations, sprintf('Expected "%s" to be accepted.', $color));
     }
@@ -41,7 +41,7 @@ final class StripeAppearanceTypeTest extends TestCase
     #[DataProvider('rejectedColorProvider')]
     public function test_color_field_rejects_invalid_hex(string $color): void
     {
-        $violations = $this->validator->validate($color, new Regex(['pattern' => StripeAppearanceType::COLOR_PATTERN]));
+        $violations = $this->validator->validate($color, new Regex(pattern: StripeAppearanceType::COLOR_PATTERN));
 
         self::assertGreaterThan(0, $violations->count(), sprintf('Expected "%s" to be rejected.', $color));
     }
@@ -60,7 +60,7 @@ final class StripeAppearanceTypeTest extends TestCase
     #[DataProvider('acceptedBorderRadiusProvider')]
     public function test_border_radius_field_accepts_valid_values(string $value): void
     {
-        $violations = $this->validator->validate($value, new Regex(['pattern' => StripeAppearanceType::BORDER_RADIUS_PATTERN]));
+        $violations = $this->validator->validate($value, new Regex(pattern: StripeAppearanceType::BORDER_RADIUS_PATTERN));
 
         self::assertCount(0, $violations, sprintf('Expected "%s" to be accepted.', $value));
     }
@@ -79,7 +79,7 @@ final class StripeAppearanceTypeTest extends TestCase
     #[DataProvider('rejectedBorderRadiusProvider')]
     public function test_border_radius_field_rejects_invalid_values(string $value): void
     {
-        $violations = $this->validator->validate($value, new Regex(['pattern' => StripeAppearanceType::BORDER_RADIUS_PATTERN]));
+        $violations = $this->validator->validate($value, new Regex(pattern: StripeAppearanceType::BORDER_RADIUS_PATTERN));
 
         self::assertGreaterThan(0, $violations->count(), sprintf('Expected "%s" to be rejected.', $value));
     }
