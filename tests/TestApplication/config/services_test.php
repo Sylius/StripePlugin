@@ -12,6 +12,6 @@ return function (ContainerConfigurator $container): void {
 
     $repoRoot = \dirname(__DIR__, 3);
 
-    $container->import($repoRoot . '/vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services.xml');
+    $container->import($repoRoot . '/vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services.php');
     $container->import($repoRoot . '/tests/Behat/Resources/services.php');
 };

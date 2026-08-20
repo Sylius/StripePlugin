@@ -16,6 +16,9 @@ final class PaymentCompletedStateListener
     ) {
     }
 
+    /**
+     * @param CompletedEvent<PaymentInterface> $event
+     */
     public function __invoke(CompletedEvent $event): void
     {
         /** @var PaymentInterface|object $payment */

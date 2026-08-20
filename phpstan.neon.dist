@@ -54,3 +54,5 @@ parameters:
         - message: '/Call to method arrayNode\(\) on an unknown class Symfony\\Component\\Config\\Definition\\Builder\\NodeBuilder<Symfony\\Component\\Config\\Definition\\Builder\\ArrayNodeDefinition>\./'
           paths:
               - src/DependencyInjection/Configuration.php
+        - message: '/PHPDoc tag @param for parameter \$event contains generic type Symfony\\Component\\Workflow\\Event\\CompletedEvent<.+> but class Symfony\\Component\\Workflow\\Event\\CompletedEvent is not generic\./'
+          path: src/EventListener/Workflow/PaymentCompletedStateListener.php
