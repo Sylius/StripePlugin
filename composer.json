@@ -58,6 +58,7 @@
         "theofidry/alice-data-fixtures": "^1.7"
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "suggest": {
         "sylius/shop-bundle": "Use the Sylius default front shop",
         "sylius/admin-bundle": "Use the Sylius default admin",
