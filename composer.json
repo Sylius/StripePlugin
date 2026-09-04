@@ -12,7 +12,7 @@
     ],
     "require": {
         "stripe/stripe-php": "^20.0",
-        "sylius/core-bundle": "^2.0",
+        "sylius/core-bundle": "^2.1.16 || ^2.2.9",
         "sylius/telemetry": "^1.0"
     },
     "require-dev": {
@@ -41,7 +41,7 @@
         "spaze/phpstan-stripe": "^3.2",
         "sylius-labs/coding-standard": "^4.1",
         "sylius-labs/suite-tags-extension": "^0.2.0",
-        "sylius/sylius": "^2.0",
+        "sylius/sylius": "^2.1.16 || ^2.2.9",
         "sylius/test-application": "^2.0.0@alpha",
         "symfony/browser-kit": "^6.4 || ^7.4",
         "symfony/debug-bundle": "^6.4 || ^7.4",
