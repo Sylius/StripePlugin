@@ -23,9 +23,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
     ) {
     }
 
-    /**
-     * @Given /^(this order) is already paid using Stripe web elements$/
-     */
+    #[Given('/^(this order) is already paid using Stripe web elements$/')]
     public function thisOrderIsAlreadyPaidUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -48,9 +46,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) is already authorized using Stripe web elements$/
-     */
+    #[Given('/^(this order) is already authorized using Stripe web elements$/')]
     public function thisOrderIsAlreadyAuthorizedUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -73,9 +69,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) is not yet paid using Stripe web elements$/
-     */
+    #[Given('/^(this order) is not yet paid using Stripe web elements$/')]
     public function thisOrderIsNotYetPaidUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -92,9 +86,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) payment has been canceled$/
-     */
+    #[Given('/^(this order) payment has been canceled$/')]
     public function thisOrderPaymentHasBeenCancelled(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -109,9 +101,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^I am prepared to cancel (this order)$/
-     */
+    #[Given('/^I am prepared to cancel (this order)$/')]
     public function iAmPreparedToCancelThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -126,9 +116,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         $this->stripeWebElementsMocker->mockCancelPayment($details['capture_method']);
     }
 
-    /**
-     * @Given /^I am prepared to capture authorization of (this order)$/
-     */
+    #[Given('/^I am prepared to capture authorization of (this order)$/')]
     public function iAmPreparedToCaptureAuthorizationOfThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -147,9 +135,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         );
     }
 
-    /**
-     * @Given /^I am prepared to cancel authorization on (this order)$/
-     */
+    #[Given('/^I am prepared to cancel authorization on (this order)$/')]
     public function iAmPreparedToCancelAuthorizationOnThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -170,9 +156,7 @@ class ManagingStripeWebElementsOrdersContext implements ManagingStripeOrdersCont
         );
     }
 
-    /**
-     * @Given /^I am prepared to refund (this order)$/
-     */
+    #[Given('/^I am prepared to refund (this order)$/')]
     public function iAmPreparedToRefundThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */

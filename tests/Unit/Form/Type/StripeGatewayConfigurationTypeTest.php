@@ -162,7 +162,7 @@ final class StripeGatewayConfigurationTypeTest extends TestCase
     {
         return [
             new NotBlank(),
-            new Regex(['pattern' => StripeGatewayConfigurationType::SECRET_KEY_PATTERN]),
+            new Regex(pattern: StripeGatewayConfigurationType::SECRET_KEY_PATTERN),
         ];
     }
 
@@ -171,7 +171,7 @@ final class StripeGatewayConfigurationTypeTest extends TestCase
     {
         return [
             new NotBlank(),
-            new Regex(['pattern' => StripeGatewayConfigurationType::PUBLISHABLE_KEY_PATTERN]),
+            new Regex(pattern: StripeGatewayConfigurationType::PUBLISHABLE_KEY_PATTERN),
         ];
     }
 }

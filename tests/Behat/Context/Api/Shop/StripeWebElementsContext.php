@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Tests\FluxSE\SyliusStripePlugin\Behat\Context\Api\Shop;
 
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Step\Given;
+use Behat\Step\Then;
+use Behat\Step\When;
 use FluxSE\SyliusStripePlugin\Provider\MetadataProviderInterface;
 use Stripe\Event;
 use Stripe\PaymentIntent;
@@ -32,12 +35,10 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
     ) {
     }
 
-    /**
-     * @Given I have confirmed my order with Stripe payment
-     * @Given I have confirmed my order with Stripe payment using authorize
-     * @When I confirm my order with Stripe payment
-     * @When I confirm my order with Stripe payment using authorize
-     */
+    #[Given('I have confirmed my order with Stripe payment')]
+    #[Given('I have confirmed my order with Stripe payment using authorize')]
+    #[When('I confirm my order with Stripe payment')]
+    #[When('I confirm my order with Stripe payment using authorize')]
     public function iConfirmMyOrderWithStripePayment(): void
     {
         $this->checkoutContext->iConfirmMyOrder();
@@ -45,10 +46,8 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->iTryToPayAgainWithStripePayment();
     }
 
-    /**
-     * @When I try to pay again with Stripe payment
-     * @When I try to pay again with Stripe payment using authorize
-     */
+    #[When('I try to pay again with Stripe payment')]
+    #[When('I try to pay again with Stripe payment using authorize')]
     public function iTryToPayAgainWithStripePayment(): void
     {
         $this->stripeWebElementsMocker->mockCaptureOrAuthorize();
@@ -59,9 +58,7 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         ]);
     }
 
-    /**
-     * @When I complete my Stripe payment successfully
-     */
+    #[When('I complete my Stripe payment successfully')]
     public function iCompleteMyStripePaymentSuccessfully(): void
     {
         $paymentRequest = $this->stripePage->findLatestPaymentRequest();
@@ -95,9 +92,7 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully without webhook
-     */
+    #[When('I complete my Stripe payment successfully without webhook')]
     public function iCompleteMyStripePaymentSuccessfullyWithoutWebhooks(): void
     {
         $this->stripeWebElementsMocker->mockSuccessfulPayment();
@@ -105,9 +100,7 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully using authorize
-     */
+    #[When('I complete my Stripe payment successfully using authorize')]
     public function iCompleteMyStripePaymentSuccessfullyUsingAuthorize(): void
     {
         $paymentRequest = $this->stripePage->findLatestPaymentRequest();
@@ -141,9 +134,7 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully without webhook using authorize
-     */
+    #[When('I complete my Stripe payment successfully without webhook using authorize')]
     public function iCompleteMyStripePaymentSuccessfullyWithoutWebhookUsingAuthorize(): void
     {
         $this->stripeWebElementsMocker->mockAuthorizePayment();
@@ -151,10 +142,8 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->stripePage->captureOrAuthorize();
     }
 
-    /**
-     * @Given I have clicked on "go back" during my Stripe payment
-     * @When I click on "go back" during my Stripe payment
-     */
+    #[Given('I have clicked on "go back" during my Stripe payment')]
+    #[When('I click on "go back" during my Stripe payment')]
     public function iCancelMyStripePayment(): void
     {
         $this->stripeWebElementsMocker->mockGoBackPayment();
@@ -165,9 +154,7 @@ class StripeWebElementsContext extends MinkContext implements StripeContextInter
         $this->client->buildCustomUpdateRequest($uri)->update();
     }
 
-    /**
-     * @Then I should be notified that my payment has been authorized
-     */
+    #[Then('I should be notified that my payment has been authorized')]
     public function iShouldBeNotifiedThatMyPaymentHasBeenAuthorized(): void
     {
         /** @var OrderInterface $order */

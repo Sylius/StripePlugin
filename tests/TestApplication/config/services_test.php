@@ -12,6 +12,8 @@ return function (ContainerConfigurator $container): void {
 
     $repoRoot = \dirname(__DIR__, 3);
 
-    $container->import($repoRoot . '/vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services.xml');
+    // Sylius ships the Behat service definitions as PHP from 2.3 on and as XML before that.
+    $behatConfig = $repoRoot . '/vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services';
+    $container->import($behatConfig . (file_exists($behatConfig . '.php') ? '.php' : '.xml'));
     $container->import($repoRoot . '/tests/Behat/Resources/services.php');
 };

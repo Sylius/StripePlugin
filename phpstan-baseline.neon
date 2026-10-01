@@ -1,0 +1,517 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$responseData of method Sylius\\Component\\Payment\\Model\\PaymentRequestInterface\:\:setResponseData\(\) expects array\<string, mixed\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/CommandHandler/Checkout/RefundPaymentRequestHandler.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/CommandHandler/Checkout/RefundPaymentRequestHandler.php
+
+		-
+			message: '#^Parameter \#1 \$responseData of method Sylius\\Component\\Payment\\Model\\PaymentRequestInterface\:\:setResponseData\(\) expects array\<string, mixed\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/CommandHandler/WebElements/RefundPaymentRequestHandler.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/CommandHandler/WebElements/RefundPaymentRequestHandler.php
+
+		-
+			message: '#^Parameter \#2 \$attributes of method Symfony\\Component\\DependencyInjection\\Definition\:\:addTag\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/DependencyInjection/CompilerPass/LiveTwigComponentCompilerPass.php
+
+		-
+			message: '#^Cannot access offset ''fallback_image'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/DependencyInjection/FluxSESyliusStripeExtension.php
+
+		-
+			message: '#^Cannot access offset ''imagine_filter'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/DependencyInjection/FluxSESyliusStripeExtension.php
+
+		-
+			message: '#^Cannot access offset ''localhost_pattern'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/DependencyInjection/FluxSESyliusStripeExtension.php
+
+		-
+			message: '#^Parameter \#2 \$value of method Symfony\\Component\\DependencyInjection\\Container\:\:setParameter\(\) expects array\|bool\|float\|int\|string\|UnitEnum\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/DependencyInjection/FluxSESyliusStripeExtension.php
+
+		-
+			message: '#^Method FluxSE\\SyliusStripePlugin\\EventListener\\Workflow\\PaymentCompletedStateListener\:\:__invoke\(\) has parameter \$event with generic class Symfony\\Component\\Workflow\\Event\\CompletedEvent but does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/EventListener/Workflow/PaymentCompletedStateListener.php
+
+		-
+			message: '#^Method FluxSE\\SyliusStripePlugin\\ExpressCheckout\\Payload\\ExpressCheckoutPayload\:\:getAddress\(\) should return array\<string, mixed\>\|null but returns array\<mixed, mixed\>\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/ExpressCheckout/Payload/ExpressCheckoutPayload.php
+
+		-
+			message: '#^Parameter \#1 \$payload of class FluxSE\\SyliusStripePlugin\\ExpressCheckout\\Payload\\ExpressCheckoutPayload constructor expects array\<string, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ExpressCheckout/Payload/ExpressCheckoutPayloadReader.php
+
+		-
+			message: '#^Class FluxSE\\SyliusStripePlugin\\Form\\Type\\StripeAppearanceType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/Type/StripeAppearanceType.php
+
+		-
+			message: '#^Class FluxSE\\SyliusStripePlugin\\Form\\Type\\StripeCheckoutGatewayConfigurationType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/Type/StripeCheckoutGatewayConfigurationType.php
+
+		-
+			message: '#^Class FluxSE\\SyliusStripePlugin\\Form\\Type\\StripeGatewayConfigurationType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Form/Type/StripeGatewayConfigurationType.php
+
+		-
+			message: '#^Parameter \#1 \$params of method Stripe\\Service\\Checkout\\SessionService\:\:create\(\) expects array\{adaptive_pricing\?\: array\{enabled\?\: bool\}, after_expiration\?\: array\{recovery\?\: array\{allow_promotion_codes\?\: bool, enabled\: bool\}\}, allow_promotion_codes\?\: bool, automatic_tax\?\: array\{enabled\: bool, liability\?\: array\{account\?\: string, type\: string\}\}, billing_address_collection\?\: string, branding_settings\?\: array\{background_color\?\: string\|null, border_style\?\: string\|null, button_color\?\: string\|null, display_name\?\: string, font_family\?\: string\|null, icon\?\: array\{file\?\: string, type\: string, url\?\: string\}, logo\?\: array\{file\?\: string, type\: string, url\?\: string\}\}, cancel_url\?\: string, client_reference_id\?\: string, \.\.\.\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Checkout/CreateManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\Checkout\\SessionService\:\:expire\(\) expects array\{expand\?\: array\<string\>\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Checkout/ExpireManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\Checkout\\SessionService\:\:retrieve\(\) expects array\{expand\?\: array\<string\>\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Checkout/RetrieveManager.php
+
+		-
+			message: '#^PHPDoc tag @var with type Stripe\\StripeObject\|null is not subtype of type \(object\{charge\?\: string\|Stripe\\Charge, payment_intent\?\: string\|Stripe\\PaymentIntent, payment_record\?\: string\|Stripe\\PaymentRecord, type\: string\}&Stripe\\StripeObject\)\|null\.$#'
+			identifier: varTag.type
+			count: 1
+			path: src/Manager/Checkout/SubscriptionAwareRetrieveManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\EventService\:\:retrieve\(\) expects array\{expand\?\: array\<string\>\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Event/RetrieveManager.php
+
+		-
+			message: '#^Parameter \#1 \$params of method Stripe\\Service\\InvoiceService\:\:all\(\) expects array\{collection_method\?\: string, created\?\: array\|int, customer\?\: string, customer_account\?\: string, due_date\?\: array\|int, ending_before\?\: string, expand\?\: array\<string\>, limit\?\: int, \.\.\.\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Invoice/AllManager.php
+
+		-
+			message: '#^Parameter \#1 \$params of method Stripe\\Service\\RefundService\:\:create\(\) expects array\{amount\?\: int, charge\?\: string, currency\?\: string, customer\?\: string, expand\?\: array\<string\>, instructions_email\?\: string, metadata\?\: array\<string, string\>\|null, origin\?\: string, \.\.\.\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/Refund/CreateManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\PaymentIntentService\:\:cancel\(\) expects array\{cancellation_reason\?\: string, expand\?\: array\<string\>\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/WebElements/CancelManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\PaymentIntentService\:\:capture\(\) expects array\{amount_details\?\: array\{discount_amount\?\: int\|null, enforce_arithmetic_validation\?\: bool, line_items\?\: array\<array\{discount_amount\?\: int, payment_method_options\?\: array\{card\?\: array\{commodity_code\?\: string\}, card_present\?\: array\{commodity_code\?\: string\}, klarna\?\: array\{image_url\?\: string, product_url\?\: string, reference\?\: string, subscription_reference\?\: string\}, paypal\?\: array\{category\?\: string, description\?\: string, sold_by\?\: string\}\}, product_code\?\: string, product_name\: string, quantity\: int, tax\?\: array\{total_tax_amount\: int\}, unit_cost\: int, unit_of_measure\?\: string\}\>\|null, shipping\?\: array\{amount\?\: int\|null, from_postal_code\?\: string\|null, to_postal_code\?\: string\|null\}\|null, tax\?\: array\{total_tax_amount\: int\}\|null\}, amount_to_capture\?\: int, application_fee_amount\?\: int, expand\?\: array\<string\>, final_capture\?\: bool, hooks\?\: array\{inputs\?\: array\{tax\?\: array\{calculation\: string\|null\}\}\}, metadata\?\: array\<string, string\>\|null, payment_details\?\: array\{customer_reference\?\: string\|null, order_reference\?\: string\|null\}\|null, \.\.\.\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/WebElements/CaptureManager.php
+
+		-
+			message: '#^Parameter \#1 \$params of method Stripe\\Service\\PaymentIntentService\:\:create\(\) expects array\{amount\: int, amount_details\?\: array\{discount_amount\?\: int\|null, enforce_arithmetic_validation\?\: bool, line_items\?\: array\<array\{discount_amount\?\: int, payment_method_options\?\: array\{card\?\: array\{commodity_code\?\: string\}, card_present\?\: array\{commodity_code\?\: string\}, klarna\?\: array\{image_url\?\: string, product_url\?\: string, reference\?\: string, subscription_reference\?\: string\}, paypal\?\: array\{category\?\: string, description\?\: string, sold_by\?\: string\}\}, product_code\?\: string, product_name\: string, quantity\: int, tax\?\: array\{total_tax_amount\: int\}, unit_cost\: int, unit_of_measure\?\: string\}\>\|null, shipping\?\: array\{amount\?\: int\|null, from_postal_code\?\: string\|null, to_postal_code\?\: string\|null\}\|null, tax\?\: array\{total_tax_amount\: int\}\|null\}, application_fee_amount\?\: int, automatic_payment_methods\?\: array\{allow_redirects\?\: string, enabled\: bool\}, capture_method\?\: string, confirm\?\: bool, confirmation_method\?\: string, confirmation_token\?\: string, \.\.\.\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/WebElements/CreateManager.php
+
+		-
+			message: '#^Parameter \#2 \$params of method Stripe\\Service\\PaymentIntentService\:\:retrieve\(\) expects array\{client_secret\?\: string, expand\?\: array\<string\>\}\|null, array\<mixed\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Manager/WebElements/RetrieveManager.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Normalizer/ExpressCheckoutAddressNormalizer.php
+
+		-
+			message: '#^Parameter \#1 \$contact of method FluxSE\\SyliusStripePlugin\\Normalizer\\ExpressCheckoutAddressNormalizer\:\:fromContact\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Normalizer/ExpressCheckoutAddressNormalizer.php
+
+		-
+			message: '#^Parameter \#2 \$fields of method FluxSE\\SyliusStripePlugin\\Normalizer\\ExpressCheckoutAddressNormalizer\:\:applyAddressFields\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Normalizer/ExpressCheckoutAddressNormalizer.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: src/Notification/LegacyStripeKeyNotificationProvider.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: src/Processor/ChargeRefundedWebhookEventProcessor.php
+
+		-
+			message: '#^PHPDoc tag @var with type Stripe\\StripeObject\|null is not subtype of type Stripe\\StripeObject\.$#'
+			identifier: varTag.type
+			count: 1
+			path: src/Processor/ChargeRefundedWebhookEventProcessor.php
+
+		-
+			message: '#^PHPDoc tag @var with type Stripe\\StripeObject\|null is not subtype of type Stripe\\StripeObject\.$#'
+			identifier: varTag.type
+			count: 1
+			path: src/Processor/WebhookEventProcessor.php
+
+		-
+			message: '#^Trait FluxSE\\SyliusStripePlugin\\Processor\\WebhookEventProcessorTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Processor/WebhookEventProcessorTrait.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/CheckoutSessionModeDataProvider.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/LineItem/OrderItemPriceDataProvider.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/LineItem/PriceData/OrderItemProductDataProvider.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/LineItem/PriceData/ShipmentProductDataProvider.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/LineItem/ShipmentPriceDataProvider.php
+
+		-
+			message: '#^Binary operation "\+\=" between mixed and non\-empty\-array\<mixed\> results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: src/Provider/Checkout/Create/LineItemsProvider.php
+
+		-
+			message: '#^Parameter \#2 \$params of method FluxSE\\SyliusStripePlugin\\Provider\\InnerParamsProviderInterface\<T of Stripe\\ApiResource\>\:\:provide\(\) expects array\<mixed\>, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Provider/CompositeMetadataParamsProvider.php
+
+		-
+			message: '#^Method FluxSE\\SyliusStripePlugin\\Provider\\CompositeParamsProvider\:\:getParams\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Provider/CompositeParamsProvider.php
+
+		-
+			message: '#^Method FluxSE\\SyliusStripePlugin\\Provider\\Refund\\RefundPaymentProvider\:\:provide\(\) never returns Stripe\\PaymentIntent so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Provider/Refund/RefundPaymentProvider.php
+
+		-
+			message: '#^Method FluxSE\\SyliusStripePlugin\\Provider\\Refund\\RefundSubscriptionInitProvider\:\:provide\(\) never returns Stripe\\PaymentIntent so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Provider/Refund/RefundSubscriptionInitProvider.php
+
+		-
+			message: '#^PHPDoc tag @var with type ArrayAccess\<string, string\>\|null is not subtype of type Stripe\\StripeObject\.$#'
+			identifier: varTag.type
+			count: 1
+			path: src/Provider/RefundEventTokenHashResolver.php
+
+		-
+			message: '#^Access to an undefined property object\{charge\?\: string\|Stripe\\Charge, payment_intent\?\: string\|Stripe\\PaymentIntent, payment_record\?\: string\|Stripe\\PaymentRecord, type\: string\}&Stripe\\StripeObject\:\:\$payment_intent\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/Provider/Transition/Checkout/SubscriptionModeTransitionProvider.php
+
+		-
+			message: '#^Parameter \#1 \$paymentIntent of method FluxSE\\SyliusStripePlugin\\StateMachine\\StripeStateAppliedChecker\:\:isLatestChargeRefunded\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/StateMachine/StripeStateAppliedChecker.php
+
+		-
+			message: '#^Parameter \#1 \$paymentIntent of method FluxSE\\SyliusStripePlugin\\StateMachine\\StripeStateAppliedChecker\:\:isPaymentIntentApplied\(\) expects array\<string, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/StateMachine/StripeStateAppliedChecker.php
+
+		-
+			message: '#^Parameter \#1 \$session of method FluxSE\\SyliusStripePlugin\\StateMachine\\StripeStateAppliedChecker\:\:isCheckoutSessionApplied\(\) expects array\<string, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/StateMachine/StripeStateAppliedChecker.php
+
+		-
+			message: '#^Property FluxSE\\SyliusStripePlugin\\Stripe\\Configurator\\StripeConfigurator\:\:\$savedAppInfo \(array\<string, string\>\) does not accept array\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Stripe/Configurator/StripeConfigurator.php
+
+		-
+			message: '#^Property FluxSE\\SyliusStripePlugin\\Stripe\\Configurator\\StripeConfigurator\:\:\$savedHttpClient \(Stripe\\HttpClient\\ClientInterface\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Stripe/Configurator/StripeConfigurator.php
+
+		-
+			message: '#^Property FluxSE\\SyliusStripePlugin\\Stripe\\Configurator\\StripeConfigurator\:\:\$savedStreamingHttpClient \(Stripe\\HttpClient\\StreamingClientInterface\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Stripe/Configurator/StripeConfigurator.php
+
+		-
+			message: '#^Parameter \#3 \$headers of method FluxSE\\SyliusStripePlugin\\Stripe\\HttpClient\\PsrClient\:\:constructRequest\(\) expects array\<string\>, array given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Stripe/HttpClient/PsrClient.php
+
+		-
+			message: '#^Call to an undefined method Symfony\\Component\\HttpFoundation\\Request\:\:get\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Twig/Component/WebElements/SummaryPaymentComponent.php
+
+		-
+			message: '#^Unable to resolve the template type T in call to method FluxSE\\SyliusStripePlugin\\Twig\\Component\\WebElements\\SummaryPaymentComponent\:\:ensureExists\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: src/Twig/Component/WebElements/SummaryPaymentComponent.php
+
+		-
+			message: '#^Parameter \#1 \$value of static method Webmozart\\Assert\\Assert\:\:contains\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/Behat/Context/Api/Shop/StripeCheckoutContext.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function preg_replace expects array\<float\|int\|string\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/Behat/Context/Api/Shop/StripeCheckoutContext.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function preg_replace expects array\<float\|int\|string\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/Behat/Context/Api/Shop/StripeWebElementsContext.php
+
+		-
+			message: '#^Offset ''payment_status'' might not exist on non\-empty\-array\{status\?\: string, payment_status\?\: string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Behat/Context/Setup/ManagingStripeCheckoutOrdersContext.php
+
+		-
+			message: '#^Offset ''status'' might not exist on non\-empty\-array\{status\?\: string, payment_status\?\: string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Behat/Context/Setup/ManagingStripeCheckoutOrdersContext.php
+
+		-
+			message: '#^Binary operation "\.\=" between string and mixed results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: tests/Behat/Context/Ui/Shop/StripeCheckoutContext.php
+
+		-
+			message: '#^Binary operation "\.\=" between string and mixed results in an error\.$#'
+			identifier: assignOp.invalid
+			count: 1
+			path: tests/Behat/Context/Ui/Shop/StripeWebElementsContext.php
+
+		-
+			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 2
+			path: tests/Behat/Mocker/Api/CheckoutSessionMocker.php
+
+		-
+			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: tests/Behat/Mocker/Api/PaymentIntentMocker.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Api\\Shop\\PaymentRequestsTest\:\:\$stripeCheckoutMocker \(Tests\\FluxSE\\SyliusStripePlugin\\Behat\\Mocker\\StripeCheckoutMocker\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Api/Shop/PaymentRequestsTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Controller\\Shop\\ExpressCheckout\\ConfigurationActionTest\:\:loadFixtures\(\) should return array\<string, object\> but returns array\<object\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Functional/Controller/Shop/ExpressCheckout/ConfigurationActionTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Controller\\Shop\\ExpressCheckout\\ConfirmActionTest\:\:decodeResponseBody\(\) should return array\<string, mixed\> but returns array\<mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Functional/Controller/Shop/ExpressCheckout/ConfirmActionTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Controller\\Shop\\ExpressCheckout\\ConfirmActionTest\:\:loadFixtures\(\) should return array\<string, object\> but returns array\<object\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Functional/Controller/Shop/ExpressCheckout/ConfirmActionTest.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: tests/Functional/Controller/Shop/ExpressCheckout/PaymentLifecycleTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Controller\\Shop\\ExpressCheckout\\PaymentLifecycleTest\:\:loadFixtures\(\) should return array\<string, object\> but returns array\<object\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Functional/Controller/Shop/ExpressCheckout/PaymentLifecycleTest.php
+
+		-
+			message: '#^Cannot access offset ''metadata'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Cannot access offset ''token_hash'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\Checkout\\Create\\DetailsProviderTest\:\:\$compositeParamsProvider \(FluxSE\\SyliusStripePlugin\\Provider\\ParamsProviderInterface\<Stripe\\Checkout\\Session\>\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\Checkout\\Create\\DetailsProviderTest\:\:\$entityManager \(Doctrine\\ORM\\EntityManager\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\Checkout\\Create\\DetailsProviderTest\:\:\$loader \(Fidry\\AliceDataFixtures\\Loader\\PurgerLoader\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\Checkout\\Create\\DetailsProviderTest\:\:\$requestContext \(Symfony\\Component\\Routing\\RequestContext\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/Checkout/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\WebElements\\Create\\DetailsProviderTest\:\:\$compositeParamsProvider \(FluxSE\\SyliusStripePlugin\\Provider\\ParamsProviderInterface\<Stripe\\PaymentIntent\>\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/WebElements/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\WebElements\\Create\\DetailsProviderTest\:\:\$entityManager \(Doctrine\\ORM\\EntityManager\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/WebElements/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Property Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Provider\\WebElements\\Create\\DetailsProviderTest\:\:\$loader \(Fidry\\AliceDataFixtures\\Loader\\PurgerLoader\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/Functional/Provider/WebElements/Create/DetailsProviderTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Functional\\Twig\\CheckoutSidebarExpressCheckoutTest\:\:loadFixtures\(\) should return array\<string, object\> but returns array\<object\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Functional/Twig/CheckoutSidebarExpressCheckoutTest.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: tests/TestApplication/config/services_test.php
+
+		-
+			message: '#^Cannot use \+\+ on mixed\.$#'
+			identifier: preInc.type
+			count: 1
+			path: tests/Unit/ExpressCheckout/Shipping/ShippingRateAssemblerTest.php
+
+		-
+			message: '#^Possibly invalid array key type mixed\.$#'
+			identifier: offsetAccess.invalidOffset
+			count: 1
+			path: tests/Unit/ExpressCheckout/Shipping/ShippingRateAssemblerTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Unit\\Form\\Type\\StripeGatewayConfigurationTypeTest\:\:collectRegisteredFields\(\) has parameter \$type with generic interface Symfony\\Component\\Form\\FormTypeInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Unit/Form/Type/StripeGatewayConfigurationTypeTest.php
+
+		-
+			message: '#^Method Tests\\FluxSE\\SyliusStripePlugin\\Unit\\Form\\Type\\StripeGatewayConfigurationTypeTest\:\:collectRegisteredFields\(\) should return array\<string, array\{type\: string, options\: array\<string, mixed\>\}\> but returns array\<string, array\{type\: string, options\: array\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Unit/Form/Type/StripeGatewayConfigurationTypeTest.php
+
+		-
+			message: '#^Dynamic call to static method PHPUnit\\Framework\\TestCase\:\:createStub\(\)\.$#'
+			identifier: staticMethod.dynamicCall
+			count: 3
+			path: tests/Unit/Twig/Extension/LegacyStripeKeyExtensionTest.php

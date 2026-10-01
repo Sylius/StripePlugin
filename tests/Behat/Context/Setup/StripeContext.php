@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\FluxSE\SyliusStripePlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
+use Behat\Step\Given;
 use Doctrine\ORM\EntityManagerInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
@@ -27,10 +28,8 @@ class StripeContext implements Context
     ) {
     }
 
-    /**
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway without using authorize
-     */
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway')]
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway without using authorize')]
     public function theStoreHasAPaymentMethodWithACodeAndStripeCheckoutSessionPaymentGateway(
         string $paymentMethodName,
         string $paymentMethodCode,
@@ -46,9 +45,7 @@ class StripeContext implements Context
         $this->createPaymentMethod($paymentMethod, $useAuthorize);
     }
 
-    /**
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway using authorize
-     */
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Checkout payment gateway using authorize')]
     public function theStoreHasAPaymentMethodWithACodeAndStripeCheckoutSessionPaymentGatewayUsingAuthorize(
         string $paymentMethodName,
         string $paymentMethodCode,
@@ -56,10 +53,8 @@ class StripeContext implements Context
         $this->theStoreHasAPaymentMethodWithACodeAndStripeCheckoutSessionPaymentGateway($paymentMethodName, $paymentMethodCode, true);
     }
 
-    /**
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway without using authorize
-     */
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway')]
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway without using authorize')]
     public function theStoreHasAPaymentMethodWithACodeAndStripeJsPaymentGateway(
         string $paymentMethodName,
         string $paymentMethodCode,
@@ -75,9 +70,7 @@ class StripeContext implements Context
         $this->createPaymentMethod($paymentMethod, $useAuthorize);
     }
 
-    /**
-     * @Given the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway using authorize
-     */
+    #[Given('the store has a payment method :paymentMethodName with a code :paymentMethodCode and Stripe Web Elements payment gateway using authorize')]
     public function theStoreHasAPaymentMethodWithACodeAndStripeJsPaymentGatewayUsingAuthorize(
         string $paymentMethodName,
         string $paymentMethodCode,

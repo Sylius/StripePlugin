@@ -26,9 +26,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
     ) {
     }
 
-    /**
-     * @Given /^(this order) is already paid using Stripe Checkout$/
-     */
+    #[Given('/^(this order) is already paid using Stripe Checkout$/')]
     public function thisOrderIsAlreadyPaidUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -58,9 +56,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) related to a subscription is already paid using Stripe Checkout$/
-     */
+    #[Given('/^(this order) related to a subscription is already paid using Stripe Checkout$/')]
     public function thisOrderRelatedToASubscriptionIsAlreadyPaidUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -109,9 +105,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) is already authorized using Stripe Checkout$/
-     */
+    #[Given('/^(this order) is already authorized using Stripe Checkout$/')]
     public function thisOrderIsAlreadyAuthorizedUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -141,9 +135,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) is not yet paid using Stripe Checkout$/
-     */
+    #[Given('/^(this order) is not yet paid using Stripe Checkout$/')]
     public function thisOrderIsNotYetPaidUsingStripe(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -167,9 +159,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^(this order) payment has been canceled$/
-     */
+    #[Given('/^(this order) payment has been canceled$/')]
     public function thisOrderPaymentHasBeenCancelled(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -184,9 +174,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->objectManager->flush();
     }
 
-    /**
-     * @Given /^I am prepared to cancel (this order)$/
-     */
+    #[Given('/^I am prepared to cancel (this order)$/')]
     public function iAmPreparedToCancelThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -206,9 +194,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->stripeCheckoutSessionMocker->mockCancelPayment($status, $captureMethod);
     }
 
-    /**
-     * @Given /^I am prepared to capture authorization of (this order)$/
-     */
+    #[Given('/^I am prepared to capture authorization of (this order)$/')]
     public function iAmPreparedToCaptureAuthorizationOfThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -229,9 +215,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->stripeCheckoutSessionMocker->mockCompleteAuthorized($status, $captureMethod);
     }
 
-    /**
-     * @Given /^I am prepared to cancel authorization on (this order)$/
-     */
+    #[Given('/^I am prepared to cancel authorization on (this order)$/')]
     public function iAmPreparedToCancelAuthorizationOnThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -256,9 +240,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         );
     }
 
-    /**
-     * @Given /^I am prepared to refund (this order)$/
-     */
+    #[Given('/^I am prepared to refund (this order)$/')]
     public function iAmPreparedToRefundThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -288,9 +270,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->stripeCheckoutSessionMocker->mockRefundPaymentRejectedByStripe($amount, $message, $code);
     }
 
-    /**
-     * @Given /^I am prepared to refund (this order) related to a subscription$/
-     */
+    #[Given('/^I am prepared to refund (this order) related to a subscription$/')]
     public function iAmPreparedToRefundThisOrderRelatedToASubscription(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */
@@ -304,9 +284,7 @@ class ManagingStripeCheckoutOrdersContext implements ManagingStripeOrdersContext
         $this->stripeCheckoutSessionMocker->mockRefundSubscription($amount);
     }
 
-    /**
-     * @Given /^I am prepared to expire (this order)$/
-     */
+    #[Given('/^I am prepared to expire (this order)$/')]
     public function iAmPreparedToExpireThisOrder(OrderInterface $order): void
     {
         /** @var PaymentInterface $payment */

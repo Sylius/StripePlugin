@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\FluxSE\SyliusStripePlugin\Behat\Context\Api\Admin;
 
 use Behat\Behat\Context\Context;
+use Behat\Step\Given;
+use Behat\Step\When;
 use Sylius\Behat\Client\ApiClientInterface;
 
 class ManagingPaymentMethodsContext implements Context
@@ -14,9 +16,7 @@ class ManagingPaymentMethodsContext implements Context
     ) {
     }
 
-    /**
-     * @When I configure it with test stripe gateway data :secretKey and :publishableKey
-     */
+    #[When('I configure it with test stripe gateway data :secretKey and :publishableKey')]
     public function iConfigureItWithTestStripeGatewayData(string $secretKey, string $publishableKey): void
     {
         $this->updateGatewayConfig([
@@ -25,9 +25,7 @@ class ManagingPaymentMethodsContext implements Context
         ]);
     }
 
-    /**
-     * @When I add a webhook secret key :webhookKey
-     */
+    #[When('I add a webhook secret key :webhookKey')]
     public function iAddAWebhookSecretKey(string $webhookKey): void
     {
         $this->updateGatewayConfig([
@@ -35,9 +33,7 @@ class ManagingPaymentMethodsContext implements Context
         ]);
     }
 
-    /**
-     * @When I use authorize
-     */
+    #[When('I use authorize')]
     public function iUseAuthorize(): void
     {
         $this->updateGatewayConfig([
@@ -45,9 +41,7 @@ class ManagingPaymentMethodsContext implements Context
         ]);
     }
 
-    /**
-     * @When I don't use authorize
-     */
+    #[When('I don\'t use authorize')]
     public function iDontUseAuthorize(): void
     {
         $this->updateGatewayConfig([
@@ -55,9 +49,7 @@ class ManagingPaymentMethodsContext implements Context
         ]);
     }
 
-    /**
-     * @Given /^I should see a warning message under the use authorize field$/
-     */
+    #[Given('/^I should see a warning message under the use authorize field$/')]
     public function iShouldSeeAWarningMessageUnderTheUseAuthorizeField(): void
     {
         // Not reproductible

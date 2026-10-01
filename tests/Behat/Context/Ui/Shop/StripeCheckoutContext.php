@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Tests\FluxSE\SyliusStripePlugin\Behat\Context\Ui\Shop;
 
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Step\Given;
+use Behat\Step\Then;
+use Behat\Step\When;
 use FluxSE\SyliusStripePlugin\Provider\MetadataProviderInterface;
 use RuntimeException;
 use Stripe\Checkout\Session;
@@ -26,12 +29,10 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
     ) {
     }
 
-    /**
-     * @Given I have confirmed my order with Stripe payment
-     * @Given I have confirmed my order with Stripe payment using authorize
-     * @When I confirm my order with Stripe payment
-     * @When I confirm my order with Stripe payment using authorize
-     */
+    #[Given('I have confirmed my order with Stripe payment')]
+    #[Given('I have confirmed my order with Stripe payment using authorize')]
+    #[When('I confirm my order with Stripe payment')]
+    #[When('I confirm my order with Stripe payment using authorize')]
     public function iConfirmMyOrderWithStripePayment(): void
     {
         $urlBefore = $this->stripePage->getCurrentUrl();
@@ -43,10 +44,8 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->waitForRedirectFrom($urlBefore);
     }
 
-    /**
-     * @When I try to pay again with Stripe payment
-     * @When I try to pay again with Stripe payment using authorize
-     */
+    #[When('I try to pay again with Stripe payment')]
+    #[When('I try to pay again with Stripe payment using authorize')]
     public function iTryToPayAgainWithStripePayment(): void
     {
         $urlBefore = $this->stripePage->getCurrentUrl();
@@ -58,9 +57,7 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->waitForRedirectFrom($urlBefore);
     }
 
-    /**
-     * @When I complete my Stripe payment successfully
-     */
+    #[When('I complete my Stripe payment successfully')]
     public function iCompleteMyStripePaymentSuccessfully(): void
     {
         $this->setupNotify(
@@ -73,9 +70,7 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully without webhook
-     */
+    #[When('I complete my Stripe payment successfully without webhook')]
     public function iCompleteMyStripePaymentSuccessfullyWithoutWebhooks(): void
     {
         $this->stripeCheckoutSessionMocker->mockSuccessfulPayment();
@@ -83,9 +78,7 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully using authorize
-     */
+    #[When('I complete my Stripe payment successfully using authorize')]
     public function iCompleteMyStripePaymentSuccessfullyUsingAuthorize(): void
     {
         $this->setupNotify(
@@ -98,9 +91,7 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @When I complete my Stripe payment successfully without webhook using authorize
-     */
+    #[When('I complete my Stripe payment successfully without webhook using authorize')]
     public function iCompleteMyStripePaymentSuccessfullyWithoutWebhookUsingAuthorize(): void
     {
         $this->stripeCheckoutSessionMocker->mockAuthorizePayment();
@@ -108,10 +99,8 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @Given I have clicked on "go back" during my Stripe payment
-     * @When I click on "go back" during my Stripe payment
-     */
+    #[Given('I have clicked on "go back" during my Stripe payment')]
+    #[When('I click on "go back" during my Stripe payment')]
     public function iCancelMyStripePayment(): void
     {
         $this->stripeCheckoutSessionMocker->mockGoBackPayment();
@@ -119,9 +108,7 @@ class StripeCheckoutContext extends MinkContext implements StripeContextInterfac
         $this->stripePage->endCaptureOrAuthorize();
     }
 
-    /**
-     * @Then I should be notified that my payment has been authorized
-     */
+    #[Then('I should be notified that my payment has been authorized')]
     public function iShouldBeNotifiedThatMyPaymentHasBeenAuthorized(): void
     {
         $this->assertNotification('Payment has been authorized.');

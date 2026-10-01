@@ -49,44 +49,44 @@ final class StripeAppearanceType extends AbstractType
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color_primary',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::COLOR_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::COLOR_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
             ->add('colorBackground', TextType::class, [
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color_background',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::COLOR_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::COLOR_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
             ->add('colorText', TextType::class, [
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color_text',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::COLOR_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::COLOR_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
             ->add('colorDanger', TextType::class, [
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color_danger',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::COLOR_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::COLOR_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.color',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
             ->add('fontFamily', TextType::class, [
@@ -97,22 +97,22 @@ final class StripeAppearanceType extends AbstractType
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.border_radius',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::BORDER_RADIUS_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.border_radius',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::BORDER_RADIUS_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.border_radius',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
             ->add('spacingUnit', TextType::class, [
                 'label' => 'flux_se_sylius_stripe_plugin.stripe_appearance.spacing_unit',
                 'required' => false,
                 'constraints' => [
-                    new Regex([
-                        'pattern' => self::BORDER_RADIUS_PATTERN,
-                        'message' => 'flux_se_sylius_stripe_plugin.stripe_appearance.border_radius',
-                        'groups' => ['sylius', 'stripe_web_elements'],
-                    ]),
+                    new Regex(
+                        pattern: self::BORDER_RADIUS_PATTERN,
+                        message: 'flux_se_sylius_stripe_plugin.stripe_appearance.border_radius',
+                        groups: ['sylius', 'stripe_web_elements'],
+                    ),
                 ],
             ])
         ;

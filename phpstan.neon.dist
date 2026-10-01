@@ -1,3 +1,9 @@
+includes:
+    # TEMPORARY: PHPStan 2 (required once Symfony 8 is really installed, 1.12 cannot parse its PHP 8.4 syntax) reports
+    # errors that PHPStan 1 did not. They are parked here to keep this pull request about Symfony 8 and Behat 4;
+    # the baseline is meant to be shrunk and removed in follow-up work, not to grow.
+    - phpstan-baseline.neon
+
 parameters:
     reportUnmatchedIgnoredErrors: false
 
@@ -7,20 +13,9 @@ parameters:
         - src
         - tests/
     excludePaths:
-        - tests/Application
         - tests/Functional/Api/JsonApiTestCase.php
 
     ignoreErrors:
-        # phpstan/phpstan-phpunit 1.x ships stubs for PHPUnit 9–11. Under PHPUnit 12, MockBuilder::method() returns the
-        # rebased PHPUnit\Framework\MockObject\Builder\InvocationMocker class that the 1.x stubs don't know about, so every
-        # createMock(...)->method(...) chain in the tests trips this single message. Bumping phpstan-phpunit to ^2.0 would fix
-        # it but requires bumping phpstan core to ^2.x and every other phpstan extension along with it — out of scope here.
-        - identifier: class.notFound
-          message: '/Call to method method\(\) on an unknown class PHPUnit\\Framework\\MockObject\\Builder\\InvocationMocker\./'
-          path: tests/
-        - identifier: staticMethod.dynamicCall
-          message: '/Dynamic call to static method PHPUnit\\Framework\\TestCase::createStub\(\)\./'
-          path: tests/
         # spaze/phpstan-stripe stubs (v3.x targeting stripe-php ^17) declare strict array{...} shapes for Stripe\Service\* methods.
         # The plugin builds params via tagged InnerParamsProviderInterface composites returning array<int|string, mixed>,
         # so feeding them into typed service params trips the stubs. Until the stubs accept generic arrays again, ignore here.
