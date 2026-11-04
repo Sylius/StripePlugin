@@ -6,6 +6,7 @@ namespace FluxSE\SyliusStripePlugin\Provider;
 
 use ArrayAccess;
 use FluxSE\SyliusStripePlugin\Stripe\Resolver\EventResolverInterface;
+use Stripe\Exception\SignatureVerificationException;
 use Stripe\StripeObject;
 use Sylius\Bundle\PaymentBundle\Provider\NotifyPaymentProviderInterface;
 use Sylius\Component\Payment\Model\PaymentInterface;
@@ -13,6 +14,7 @@ use Sylius\Component\Payment\Model\PaymentMethodInterface;
 use Sylius\Component\Payment\Model\PaymentRequestInterface;
 use Sylius\Component\Payment\Repository\PaymentRequestRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 final readonly class StripeNotifyPaymentProvider implements NotifyPaymentProviderInterface
 {
@@ -30,7 +32,11 @@ final readonly class StripeNotifyPaymentProvider implements NotifyPaymentProvide
 
     public function getPayment(Request $request, PaymentMethodInterface $paymentMethod): PaymentInterface
     {
-        $event = $this->eventResolver->resolve($request, $paymentMethod);
+        try {
+            $event = $this->eventResolver->resolve($request, $paymentMethod);
+        } catch (SignatureVerificationException $e) {
+            throw new BadRequestHttpException($e->getMessage(), $e);
+        }
 
         /** @var StripeObject|null $stripeObject */
         $stripeObject = $event->offsetGet('data');

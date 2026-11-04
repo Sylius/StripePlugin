@@ -24,7 +24,7 @@ final readonly class EventResolver implements EventResolverInterface
         $signatureVerificationErrors = [];
         /** @var string[] $webhookSecretKeys */
         $webhookSecretKeys = $paymentMethod->getGatewayConfig()?->getConfig()['webhook_secret_keys'] ?? [];
-        foreach ($webhookSecretKeys as $webhookSecretKey) {
+        foreach (array_values($webhookSecretKeys) as $index => $webhookSecretKey) {
             try {
                 return Webhook::constructEvent(
                     $content,
@@ -33,8 +33,8 @@ final readonly class EventResolver implements EventResolverInterface
                 );
             } catch (SignatureVerificationException $e) {
                 $signatureVerificationErrors[] = sprintf(
-                    '- Tried with "%s": "%s"',
-                    $webhookSecretKey,
+                    '- Tried with key #%d: "%s"',
+                    $index + 1,
                     $e->getMessage(),
                 );
             }
