@@ -12,12 +12,14 @@ use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\TestCase;
 use Stripe\Charge;
 use Stripe\Event;
+use Stripe\Exception\SignatureVerificationException;
 use Stripe\PaymentIntent;
 use Sylius\Component\Payment\Model\PaymentInterface;
 use Sylius\Component\Payment\Model\PaymentMethodInterface;
 use Sylius\Component\Payment\Model\PaymentRequestInterface;
 use Sylius\Component\Payment\Repository\PaymentRequestRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 #[AllowMockObjectsWithoutExpectations]
 final class StripeNotifyPaymentProviderTest extends TestCase
@@ -121,6 +123,23 @@ final class StripeNotifyPaymentProviderTest extends TestCase
         $this->expectException(\LogicException::class);
 
         $this->provider->getPayment(new Request(), $this->paymentMethod);
+    }
+
+    public function test_it_answers_bad_request_when_the_signature_verification_fails(): void
+    {
+        $signatureVerificationException = SignatureVerificationException::factory('Unable to check Stripe Signature using several webhook keys:');
+        $this->eventResolver->method('resolve')->willThrowException($signatureVerificationException);
+
+        try {
+            $this->provider->getPayment(new Request(), $this->paymentMethod);
+        } catch (BadRequestHttpException $exception) {
+            self::assertSame($signatureVerificationException->getMessage(), $exception->getMessage());
+            self::assertSame($signatureVerificationException, $exception->getPrevious());
+
+            return;
+        }
+
+        self::fail(sprintf('Expected %s to be thrown.', BadRequestHttpException::class));
     }
 
     private function paymentRequest(PaymentInterface $payment): PaymentRequestInterface&MockObject
