@@ -54,7 +54,7 @@ class SummaryPaymentComponent
 
         /** @var string $tokenHash */
         $tokenHash = $this->ensureExists(
-            $request->get('hash'),
+            $request->attributes->get('hash'),
             'Token hash is required to load the payment summary component.',
         );
 
